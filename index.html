@@ -1,96 +1,1515 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Muhammad Gul — Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Muhammad Gul Freelance Team offering IT Support, AI, Web Development, ERP, Networking, Graphic Design, Video Animation, and Digital Solutions.">
+    <title>Muhammad Gul Freelance Team | Digital Solutions</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS -->
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #7c3aed;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --light-gray: #e2e8f0;
+            --success: #10b981;
+            --whatsapp: #25d366;
+            --white: #ffffff;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--gray);
+            font-size: 1.05rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .primary-btn {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .primary-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .secondary-btn {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            margin-left: 1rem;
+        }
+
+        .secondary-btn:hover {
+            background-color: var(--primary);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .whatsapp-btn {
+            background-color: var(--whatsapp);
+            color: var(--white);
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 20px rgba(37, 211, 102, 0.2);
+            background-color: #128c7e;
+        }
+
+        .whatsapp-btn i {
+            font-size: 1.2rem;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .burger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .burger div {
+            width: 25px;
+            height: 3px;
+            background-color: var(--dark);
+            margin: 5px;
+            transition: var(--transition);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            min-height: 700px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+            clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
+
+        .hero-content {
+            max-width: 600px;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            color: var(--dark);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        /* About Section */
+        #about {
+            background-color: var(--light);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .team-member {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            text-align: center;
+            padding: 2rem 1.5rem;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+        }
+
+        .team-member img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            border: 5px solid var(--light-gray);
+        }
+
+        .team-member h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .role {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .skills {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .bio {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* CV Download Section */
+        .cv-download-section {
+            background: var(--light);
+            border-radius: 15px;
+            padding: 3rem;
+            margin-top: 4rem;
+            box-shadow: var(--shadow-light);
+        }
+
+        .cv-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            border-left: 4px solid var(--primary);
+        }
+
+        .cv-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .cv-download-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .cv-download-btn:hover {
+            background-color: var(--primary-dark);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            border-top: 4px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+            border-top-color: var(--primary);
+        }
+
+        .service-card i {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+        }
+
+        .service-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        /* Portfolio Section */
+        #portfolio {
+            background-color: var(--light);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .portfolio-item {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .portfolio-item-content {
+            padding: 1.5rem;
+        }
+
+        .portfolio-item h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Recent Projects Section */
+        #recent-projects {
+            background-color: var(--light);
+        }
+
+        .projects-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .top-projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .project-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            border-left: 4px solid var(--primary);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .project-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        .project-description {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            min-height: 60px;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .project-link:hover {
+            color: var(--primary-dark);
+            gap: 0.7rem;
+        }
+
+        .project-link i {
+            font-size: 0.9rem;
+        }
+
+        .more-projects-container {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: var(--shadow-light);
+        }
+
+        .more-projects-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        .more-projects-list {
+            max-height: 400px;
+            overflow-y: auto;
+            padding-right: 1rem;
+        }
+
+        .more-project-item {
+            padding: 1rem;
+            border-bottom: 1px solid var(--light-gray);
+            transition: var(--transition);
+        }
+
+        .more-project-item:hover {
+            background-color: rgba(37, 99, 235, 0.05);
+            transform: translateX(5px);
+        }
+
+        .more-project-item:last-child {
+            border-bottom: none;
+        }
+
+        .more-project-item h5 {
+            color: var(--dark);
+            margin-bottom: 0.3rem;
+            font-size: 1rem;
+        }
+
+        .more-project-item p {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: var(--shadow-light);
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '\201C';
+            font-size: 4rem;
+            color: var(--light-gray);
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-family: serif;
+        }
+
+        .testimonial p {
+            font-style: italic;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial h4 {
+            color: var(--primary);
+            margin-bottom: 0;
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: var(--light);
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 1rem 1.2rem;
+            border: 1px solid var(--light-gray);
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .contact-info {
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: var(--shadow-light);
+        }
+
+        .contact-info p {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info i {
+            margin-right: 1rem;
+            color: var(--primary);
+            width: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 3rem 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-left: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--light-gray);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .hero::before {
+                width: 40%;
+            }
+            
+            .whatsapp-btn {
+                bottom: 20px;
+                right: 20px;
+                padding: 0.8rem 1.2rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                height: calc(100vh - 80px);
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 3rem;
+                width: 100%;
+                transition: var(--transition);
+                box-shadow: var(--shadow-light);
+            }
+            
+            .nav-links li {
+                margin: 1.5rem 0;
+            }
+            
+            .nav-links a {
+                font-size: 1.2rem;
+            }
+            
+            .burger {
+                display: block;
+            }
+            
+            .nav-active {
+                right: 0;
+            }
+            
+            .toggle .line1 {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+            
+            .toggle .line2 {
+                opacity: 0;
+            }
+            
+            .toggle .line3 {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+            
+            .hero {
+                padding-top: 100px;
+                text-align: center;
+            }
+            
+            .hero::before {
+                display: none;
+            }
+            
+            .hero-content {
+                max-width: 100%;
+            }
+            
+            .cta-buttons {
+                justify-content: center;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+            }
+            
+            .footer-links {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            
+            .footer-links li {
+                margin: 0 0.5rem;
+            }
+            
+            .whatsapp-btn {
+                bottom: 15px;
+                right: 15px;
+                padding: 0.7rem 1rem;
+                font-size: 0.8rem;
+            }
+            
+            .whatsapp-btn span {
+                display: none;
+            }
+            
+            .whatsapp-btn i {
+                font-size: 1.5rem;
+            }
+            
+            .top-projects {
+                grid-template-columns: 1fr;
+            }
+            
+            .more-projects-header {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            section {
+                padding: 3rem 0;
+            }
+            
+            .secondary-btn {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header id="home">
-    <div class="container">
-      <nav>
-        <div class="logo">MG</div>
+
+<!-- WhatsApp Button -->
+<a href="https://wa.me/966537596560" class="whatsapp-btn" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+    <span>Chat on WhatsApp</span>
+</a>
+
+<!-- Header / Navigation -->
+<header>
+    <nav class="navbar">
+        <div class="logo">Muhammad <span>Gul</span></div>
         <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><button id="darkToggle"><i class="fas fa-moon"></i></button></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#cv">Team CVs</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#recent-projects">Recent Projects</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
-      </nav>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+</header>
 
-      <div class="intro">
-        <h1>Hello, I'm <span class="name">Muhammad Gul</span></h1>
-        <p class="typing"></p>
-      </div>
-    </div>
-  </header>
-
-  <section id="about" class="section">
+<!-- Home / Landing Page -->
+<section id="home" class="hero">
     <div class="container">
-      <h2>About Me</h2>
-      <p>
-        I'm a passionate multi-skilled IT professional specializing in WordPress/Web Development, Software & Web Testing, Mobile App Testing (Manual & Automation), AI Engineering, and IT Support. I aim to deliver excellence in every project I take on.
-      </p>
-      <h3>Skills</h3>
-      <ul class="skills-grid">
-        <li>HTML5 & CSS3</li>
-        <li>JavaScript</li>
-        <li>WordPress</li>
-        <li>Manual Testing</li>
-        <li>Automation Testing</li>
-        <li>AI & ML Basics</li>
-        <li>IT Support</li>
-      </ul>
+        <div class="hero-content">
+            <h1>Empowering Businesses with IT, AI, and Digital Solutions</h1>
+            <p>We are a professional freelance team offering cutting-edge IT Support, AI Solutions, Web Development, ERP Implementation, Networking, Graphic Design, and more to transform your business.</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn primary-btn">Hire Our Team</a>
+                <a href="#cv" class="btn secondary-btn">View Team CVs</a>
+            </div>
+        </div>
     </div>
-  </section>
+</section>
 
-  <section id="services" class="section">
+<!-- About Us -->
+<section id="about">
     <div class="container">
-      <h2>Services</h2>
-      <div class="cards-grid">
-        <div class="card"><i class="fas fa-code"></i><h3>Website Development</h3></div>
-        <div class="card"><i class="fas fa-vial"></i><h3>Manual Testing</h3></div>
-        <div class="card"><i class="fas fa-robot"></i><h3>Automation Testing</h3></div>
-        <div class="card"><i class="fas fa-brain"></i><h3>AI Solutions</h3></div>
-        <div class="card"><i class="fas fa-headset"></i><h3>IT Support</h3></div>
-      </div>
+        <h2>Meet Our Team</h2>
+        <p class="section-subtitle">Our diverse team combines IT, AI, web development, and digital marketing expertise to deliver exceptional solutions tailored to your business needs.</p>
+        <div class="team-grid">
+            <!-- Team Member 1 -->
+            <article class="team-member">
+                <img src="images/gul.PNG" alt="Muhammad Gul">
+                <h3>Muhammad Gul</h3>
+                <p class="role">AI Specialist & IT Support Lead</p>
+                <p class="skills">AI Automation, IT Support, Team Leadership</p>
+                <p class="bio">Leads the team in AI, IT infrastructure, and project management with 8+ years of experience.</p>
+            </article>
+            <!-- Team Member 2 -->
+            <article class="team-member">
+                <img src="images/imad" alt="Imad Uddin">
+                <h3>Imad Uddin</h3>
+                <p class="role">Full Stack Developer & ERP Specialist</p>
+                <p class="skills">Full Stack Development, ERP Implementation</p>
+                <p class="bio">Builds scalable web applications and implements Odoo, SAP, and NetSuite ERP solutions.</p>
+            </article>
+            <!-- Team Member 3 -->
+            <article class="team-member">
+                <img src="images/azan.jpeg" alt="Azan">
+                <h3>Azan</h3>
+                <p class="role">IT Support & Software QA Engineer</p>
+                <p class="skills">IT Support, QA Testing, Remote Troubleshooting</p>
+                <p class="bio">Provides remote IT support and comprehensive QA testing for projects of all sizes.</p>
+            </article>
+            <!-- Team Member 4 -->
+            <article class="team-member">
+                <img src="images/gul.PNG" alt="Sikandar Hayat">
+                <h3>Sikandar Hayat</h3>
+                <p class="role">ERP Implementation Specialist</p>
+                <p class="skills">ERP Implementation, Business Process Optimization</p>
+                <p class="bio">Optimizes workflows through strategic ERP deployment and support for business efficiency.</p>
+            </article>
+            <!-- Team Member 5 -->
+            <article class="team-member">
+                <img src="images/zeshan.PNG" alt="Zeshan Alam">
+                <h3>Zeshan Alam</h3>
+                <p class="role">SEO & Social Media Expert</p>
+                <p class="skills">SEO, Social Media Marketing, Digital Strategy</p>
+                <p class="bio">Enhances online visibility and engagement through data-driven digital marketing strategies.</p>
+            </article>
+            <!-- Team Member 6 -->
+            <article class="team-member">
+                <img src="images/nadeem.jpeg" alt="Nadeem Khan">
+                <h3>Nadeem Khan</h3>
+                <p class="role">Gaming & Esports IT Specialist</p>
+                <p class="skills">Gaming IT Support, Esports Networking, Hardware Optimization</p>
+                <p class="bio">Provides specialized IT support for gaming & esports setups with low-latency networking solutions.</p>
+            </article>
+            <!-- Team Member 7 -->
+            <article class="team-member">
+                <img src="images/mukhtiar.jpeg" alt="Mukhtiar">
+                <h3>Mukhtiar</h3>
+                <p class="role">Networking & CCTV Specialist</p>
+                <p class="skills">IT Support, Networking, CCTV & AI Cameras</p>
+                <p class="bio">Manages networking infrastructure and AI security camera installation for comprehensive security.</p>
+            </article>
+            <!-- Team Member 8 -->
+            <article class="team-member">
+                <img src="images/asim.PNG" alt="Muhammad Asim">
+                <h3>Muhammad Asim</h3>
+                <p class="role">IT Support & Data Management</p>
+                <p class="skills">IT Support, ERP Support, Data Entry & Analysis</p>
+                <p class="bio">Ensures smooth technical support and accurate data handling for business operations.</p>
+            </article>
+            <!-- Team Member 9 -->
+            <article class="team-member">
+                <img src="images/asghar.jpeg" alt="Asghar Khan">
+                <h3>Asghar Khan</h3>
+                <p class="role">WordPress Developer & Graphic Designer</p>
+                <p class="skills">WordPress, Web Development, Graphic Design</p>
+                <p class="bio">Creates visually appealing websites and graphics that enhance brand identity and user experience.</p>
+            </article>
+            <!-- Team Member 10 -->
+            <article class="team-member">
+                <img src="images/sami.jpeg" alt="Muhammad Mohammad">
+                <h3>Muhammad Mohammad</h3>
+                <p class="role">Content Writer & Strategist</p>
+                <p class="skills">Content Writing, Copywriting, Digital Content Strategy</p>
+                <p class="bio">Crafts professional, engaging content for websites, blogs, and marketing campaigns.</p>
+            </article>
+        </div>
     </div>
-  </section>
+</section>
 
-  <section id="projects" class="section">
+<!-- CV Download Section -->
+<section id="cv">
     <div class="container">
-      <h2>Projects</h2>
-      <div class="cards-grid">
-        <div class="card"><div class="placeholder"></div><h3>Project One</h3></div>
-        <div class="card"><div class="placeholder"></div><h3>Project Two</h3></div>
-        <div class="card"><div class="placeholder"></div><h3>Project Three</h3></div>
-        <div class="card"><div class="placeholder"></div><h3>Project Four</h3></div>
-      </div>
+        <h2>Team CVs & Profiles</h2>
+        <p class="section-subtitle">Download our team members' CVs to learn more about their qualifications, experience, and expertise.</p>
+        
+        <div class="cv-download-section">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="cv-card">
+                        <h4>Muhammad Gul</h4>
+                        <p class="role mb-2">AI Specialist & IT Support Lead</p>
+                        <p class="skills mb-3">8+ years experience in AI, IT Infrastructure, Project Management</p>
+                        <a href="#" class="cv-download-btn" onclick="downloadCV('Muhammad Gul')">
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="cv-card">
+                        <h4>Imad Uddin</h4>
+                        <p class="role mb-2">Full Stack Developer & ERP Specialist</p>
+                        <p class="skills mb-3">Expert in Odoo, SAP, NetSuite ERP Implementation</p>
+                        <a href="#" class="cv-download-btn" onclick="downloadCV('Imad Uddin')">
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="cv-card">
+                        <h4>Azan</h4>
+                        <p class="role mb-2">IT Support & Software QA Engineer</p>
+                        <p class="skills mb-3">Remote IT Support, QA Testing, Troubleshooting</p>
+                        <a href="#" class="cv-download-btn" onclick="downloadCV('Azan')">
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="cv-card">
+                        <h4>Sikandar Hayat</h4>
+                        <p class="role mb-2">ERP Implementation Specialist</p>
+                        <p class="skills mb-3">Business Process Optimization, ERP Deployment</p>
+                        <a href="#" class="cv-download-btn" onclick="downloadCV('Sikandar Hayat')">
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="cv-card">
+                        <h4>Zeshan Alam</h4>
+                        <p class="role mb-2">SEO & Social Media Expert</p>
+                        <p class="skills mb-3">Digital Strategy, SEO, Social Media Marketing</p>
+                        <a href="#" class="cv-download-btn" onclick="downloadCV('Zeshan Alam')">
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="cv-card">
+                        <h4>Nadeem Khan</h4>
+                        <p class="role mb-2">Gaming & Esports IT Specialist</p>
+                        <p class="skills mb-3">Gaming IT Support, Esports Networking, Hardware Optimization</p>
+                        <a href="#" class="cv-download-btn" onclick="downloadCV('Nadeem Khan')">
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="cv-card">
+                        <h4>Mukhtiar</h4>
+                        <p class="role mb-2">Networking & CCTV Specialist</p>
+                        <p class="skills mb-3">IT Support, Networking, AI Security Cameras</p>
+                        <a href="#" class="cv-download-btn" onclick="downloadCV('Mukhtiar')">
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="cv-card">
+                        <h4>Muhammad Asim</h4>
+                        <p class="role mb-2">IT Support & Data Management</p>
+                        <p class="skills mb-3">ERP Support, Data Entry, Technical Support</p>
+                        <a href="#" class="cv-download-btn" onclick="downloadCV('Muhammad Asim')">
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="cv-card">
+                        <h4>Asghar Khan</h4>
+                        <p class="role mb-2">WordPress Developer & Graphic Designer</p>
+                        <p class="skills mb-3">WordPress Development, Web Design, Graphic Design</p>
+                        <a href="#" class="cv-download-btn" onclick="downloadCV('Asghar Khan')">
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="cv-card">
+                        <h4>Muhammad Mohammad</h4>
+                        <p class="role mb-2">Content Writer & Strategist</p>
+                        <p class="skills mb-3">Content Writing, Copywriting, Digital Content Strategy</p>
+                        <a href="#" class="cv-download-btn" onclick="downloadCV('Muhammad Mohammad')">
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-4 text-center">
+                <p class="mb-3">For complete team portfolios and detailed project experience, please contact us directly.</p>
+                <a href="#contact" class="btn primary-btn">Request Complete Portfolio</a>
+            </div>
+        </div>
     </div>
-  </section>
+</section>
 
-  <section id="contact" class="section">
+<!-- Services Section -->
+<section id="services">
     <div class="container">
-      <h2>Contact</h2>
-      <p><i class="fas fa-envelope"></i> muhammadgul.ims@gmail.com</p>
-      <p><i class="fas fa-phone"></i> +966 537596560</p>
-      <form class="contact-form">
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
+        <h2>Our Services</h2>
+        <p class="section-subtitle">We offer a comprehensive suite of digital solutions to help your business thrive in the modern marketplace.</p>
+        <div class="services-grid">
+            <article class="service-card">
+                <i class="fas fa-headset"></i>
+                <h3>IT Support</h3>
+                <p>Troubleshooting, networking, and remote assistance for businesses of all sizes.</p>
+            </article>
+            <article class="service-card">
+                <i class="fas fa-robot"></i>
+                <h3>AI Solutions</h3>
+                <p>Automation and AI-driven tools to improve business efficiency and decision-making.</p>
+            </article>
+            <article class="service-card">
+                <i class="fas fa-code"></i>
+                <h3>Web Development</h3>
+                <p>Full stack development and responsive WordPress websites with modern design.</p>
+            </article>
+            <article class="service-card">
+                <i class="fas fa-cogs"></i>
+                <h3>ERP Solutions</h3>
+                <p>Odoo, SAP, NetSuite implementation and support services for streamlined operations.</p>
+            </article>
+            <article class="service-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Data Analysis</h3>
+                <p>Reports, dashboards, and insights for informed business decision-making.</p>
+            </article>
+            <article class="service-card">
+                <i class="fas fa-network-wired"></i>
+                <h3>Networking & Security</h3>
+                <p>Network setup, monitoring, and AI-based CCTV camera installation for security.</p>
+            </article>
+            <article class="service-card">
+                <i class="fas fa-paint-brush"></i>
+                <h3>Graphic Design</h3>
+                <p>Branding, social media visuals, and creative designs that capture attention.</p>
+            </article>
+            <article class="service-card">
+                <i class="fas fa-video"></i>
+                <h3>Video Animation</h3>
+                <p>Motion graphics, explainer videos, and promotional animations for engagement.</p>
+            </article>
+        </div>
     </div>
-  </section>
+</section>
 
-  <footer>
-    <p>&copy; 2025 Muhammad Gul. All rights reserved.</p>
-  </footer>
+<!-- Portfolio Section -->
+<section id="portfolio">
+    <div class="container">
+        <h2>Our Portfolio</h2>
+        <p class="section-subtitle">Explore some of our recent projects that showcase our expertise and creative solutions.</p>
+        <div class="portfolio-grid">
+            <article class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="ERP Project">
+                <div class="portfolio-item-content">
+                    <h3>ERP Implementation</h3>
+                    <p>Customized Odoo & SAP ERP solutions for business optimization and workflow automation.</p>
+                </div>
+            </article>
+            <article class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="AI Automation">
+                <div class="portfolio-item-content">
+                    <h3>AI Automation Tools</h3>
+                    <p>Automated workflows for businesses using AI-driven solutions to increase productivity.</p>
+                </div>
+            </article>
+            <article class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Web Design">
+                <div class="portfolio-item-content">
+                    <h3>Web Development</h3>
+                    <p>Responsive web design and development with SEO optimization for increased visibility.</p>
+                </div>
+            </article>
+            <article class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Networking">
+                <div class="portfolio-item-content">
+                    <h3>Networking & Security Setup</h3>
+                    <p>Complete network setup and AI CCTV installations for enhanced business security.</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
 
-  <script src="scripts.js"></script>
+<!-- Recent Projects Section -->
+<section id="recent-projects">
+    <div class="container">
+        <h2>Recent Projects</h2>
+        <p class="section-subtitle">Check out our latest work showcasing our expertise in web development, AI solutions, Python programming, and more.</p>
+        
+        <div class="projects-container">
+            <!-- Top 6 Featured Projects -->
+            <div class="top-projects">
+                <div class="project-card">
+                    <h4>Client Website - Al Wadi Floors</h4>
+                    <p class="project-description">Professional flooring company website with e-commerce capabilities and responsive design.</p>
+                    <a href="http://www.alwadifloors.com" target="_blank" class="project-link">
+                        Visit Website <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+                
+                <div class="project-card">
+                    <h4>SEO Service Portal</h4>
+                    <p class="project-description">Comprehensive SEO services website with service listings, pricing, and client portfolio.</p>
+                    <a href="https://alamtechsol.com/best-seo-services-in-pakistan/" target="_blank" class="project-link">
+                        Visit Portal <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+                
+                <div class="project-card">
+                    <h4>Odoo Lead & Project Management</h4>
+                    <p class="project-description">Custom Odoo implementation with lead tracking and project management automation.</p>
+                    <a href="https://fabraca-studios.odoo.com/" target="_blank" class="project-link">
+                        View Demo <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+                
+                <div class="project-card">
+                    <h4>Python OpenAI Chatbot with RAG</h4>
+                    <p class="project-description">Intelligent chatbot using OpenAI API with Retrieval-Augmented Generation for accurate responses.</p>
+                    <a href="https://github.com/imadkhan1122/ChatGPT_Project" target="_blank" class="project-link">
+                        View on GitHub <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+                
+                <div class="project-card">
+                    <h4>Odoo Website with Research Module</h4>
+                    <p class="project-description">Custom Odoo website with research summarization module for enhanced content management.</p>
+                    <a href="https://www.kmizeolite.com/" target="_blank" class="project-link">
+                        Visit Website <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+                
+                <div class="project-card">
+                    <h4>PDF Table Extraction Tool</h4>
+                    <p class="project-description">Python tool for extracting and processing table data from PDF documents using PyMuPDF.</p>
+                    <a href="https://github.com/imadkhan1122/PDFDataMiningUsingPyMuPDF" target="_blank" class="project-link">
+                        View on GitHub <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- More Projects (Scrollable) -->
+            <div class="more-projects-container">
+                <div class="more-projects-header">
+                    <h3>More Projects</h3>
+                    <p class="mb-0">Scroll to explore additional projects</p>
+                </div>
+                
+                <div class="more-projects-list">
+                    <div class="more-project-item">
+                        <h5>Image Padding and Resizing Tool</h5>
+                        <p>Python utility for batch image processing with padding and resizing capabilities</p>
+                        <a href="https://github.com/imadkhan1122/ImagePadding" target="_blank" class="project-link">
+                            View on GitHub <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="more-project-item">
+                        <h5>OCR for Scanned PDF Documents</h5>
+                        <p>German language PDF parser with OCR capabilities for scanned documents</p>
+                        <a href="https://github.com/imadkhan1122/GermanScannedPdfParser" target="_blank" class="project-link">
+                            View on GitHub <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="more-project-item">
+                        <h5>Dominant Color Identification</h5>
+                        <p>Image processing tool to identify and name dominant colors in images</p>
+                        <a href="https://github.com/imadkhan1122/DominantColorIdentificationAndNaming" target="_blank" class="project-link">
+                            View on GitHub <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="more-project-item">
+                        <h5>Image Feature Extraction with Deep Learning</h5>
+                        <p>Deep learning based image annotation and feature extraction system</p>
+                        <a href="https://github.com/imadkhan1122/Image-Annotation" target="_blank" class="project-link">
+                            View on GitHub <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="more-project-item">
+                        <h5>PDF Parser & Highlighter Desktop App</h5>
+                        <p>Desktop application for parsing PDFs and highlighting important sections</p>
+                        <a href="https://github.com/imadkhan1122/PdfParserAnd-HighlighterApp" target="_blank" class="project-link">
+                            View on GitHub <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="more-project-item">
+                        <h5>Flask Popup Chatbot with GPT-3</h5>
+                        <p>AI-powered popup chatbot integrated with GPT-3 for website engagement</p>
+                        <a href="https://github.com/imadkhan1122/AI_PoweredPopUpChat-Bot" target="_blank" class="project-link">
+                            View on GitHub <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="more-project-item">
+                        <h5>Lead Scrapers Collection</h5>
+                        <p>Various lead scraping tools for different platforms including firmy.cz and Y Combinator</p>
+                        <div class="mt-2">
+                            <a href="https://github.com/imadkhan1122/Firmy_cz_LeadScrapaer" target="_blank" class="project-link me-3">
+                                Firmy.cz Scraper <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="https://github.com/imadkhan1122/Y_Combinator_SCRAPER" target="_blank" class="project-link">
+                                Y Combinator Scraper <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="more-project-item">
+                        <h5>Image Scraper & Barcode Generator</h5>
+                        <p>Tool for scraping images from websites and generating barcodes</p>
+                        <a href="https://github.com/imadkhan1122/ImageScraperAndBarcodeGen" target="_blank" class="project-link">
+                            View on GitHub <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="more-project-item">
+                        <h5>Sci-Hub Papers Scraper</h5>
+                        <p>Academic paper scraper for Sci-Hub platform with search capabilities</p>
+                        <a href="https://github.com/imadkhan1122/SCI_Hub_Scraper" target="_blank" class="project-link">
+                            View on GitHub <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <p>Have a project in mind? Let's discuss how we can help bring your ideas to life!</p>
+                <a href="#contact" class="btn primary-btn">Start Your Project</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonials">
+    <div class="container">
+        <h2>Client Testimonials</h2>
+        <p class="section-subtitle">See what our clients have to say about our services and the impact we've made on their businesses.</p>
+        <div class="testimonials-grid">
+            <article class="testimonial">
+                <p>"Muhammad Gul and his team transformed our IT workflow completely. Their AI solutions saved us 20+ hours per week. Highly professional and reliable."</p>
+                <h4>Ahmed Al-Rashid – CEO, TechCorp Saudi</h4>
+            </article>
+            <article class="testimonial">
+                <p>"The ERP implementation was seamless and has optimized our operations significantly. The team provided excellent support throughout the process."</p>
+                <h4>Sarah Johnson – Operations Manager</h4>
+            </article>
+            <article class="testimonial">
+                <p>"Excellent WordPress website design and SEO support. Our traffic doubled within three months of working with this team. Highly recommended!"</p>
+                <h4>Mohammed Khan – Marketing Director</h4>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <p class="section-subtitle">Get in touch for projects, collaborations, or inquiries. We're ready to help transform your business.</p>
+        <div class="contact-wrapper">
+            <form action="#" method="POST" class="contact-form">
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <input type="text" name="subject" placeholder="Subject" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn primary-btn">Send Message</button>
+            </form>
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i> mgulksa1@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +966 53 759 6560</p>
+                <p><i class="fas fa-map-marker-alt"></i> Riyadh, Saudi Arabia</p>
+                <p><i class="fas fa-clock"></i> Sunday - Thursday: 9 AM - 6 PM</p>
+                <p>Ready to start your project? Contact us today for a free consultation and quote.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container footer-content">
+        <p>&copy; 2026 Muhammad Gul Freelance Team. All rights reserved.</p>
+        <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#cv">Team CVs</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#recent-projects">Recent Projects</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Mobile Navigation Toggle
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-links li');
+    
+    burger.addEventListener('click', () => {
+        nav.classList.toggle('nav-active');
+        burger.classList.toggle('toggle');
+    });
+    
+    // Close mobile menu when clicking on a link
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('nav-active');
+            burger.classList.remove('toggle');
+        });
+    });
+    
+    // Form submission (for demo purposes only)
+    const contactForm = document.querySelector('.contact-form');
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Thank you for your message! We will get back to you soon.');
+        contactForm.reset();
+    });
+    
+    // CV Download Function
+    function downloadCV(memberName) {
+        alert(`Thank you for your interest in ${memberName}'s CV. In a live environment, this would download the CV file.\n\nFor now, please email mgulksa1@gmail.com to request CVs.`);
+        return false;
+    }
+    
+    // WhatsApp button interaction
+    const whatsappBtn = document.querySelector('.whatsapp-btn');
+    whatsappBtn.addEventListener('click', function() {
+        console.log('WhatsApp button clicked');
+    });
+    
+    // Track project link clicks
+    const projectLinks = document.querySelectorAll('.project-link');
+    projectLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            const projectName = this.closest('.project-card, .more-project-item').querySelector('h4, h5').textContent;
+            console.log(`Project clicked: ${projectName}`);
+        });
+    });
+</script>
+
 </body>
 </html>
